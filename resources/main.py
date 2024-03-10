@@ -1,7 +1,9 @@
 import os
-from playground_secret_key import SECRET_KEY
+
 from langchain.schema import (SystemMessage, HumanMessage, AIMessage)
 from langchain_openai import ChatOpenAI
+
+from playground_secret_key import SECRET_KEY
 
 os.environ['OPEN_API_KEY'] = SECRET_KEY
 chat = ChatOpenAI(

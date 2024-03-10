@@ -1,21 +1,19 @@
+import logging
 import os
-import chromadb
-import logging 
 import sys
-from llama_index import ServiceContext
-from llama_index import VectorStoreIndex
-from llama_index import SimpleDirectoryReader
-from llama_index.llms import OpenAI
-from llama_index.embeddings import HuggingFaceEmbedding
-from llama_index.vector_stores import ChromaVectorStore, MilvusVectorStore
-from llama_index.storage.storage_context import StorageContext
-from llama_index import download_loader, PromptHelper
-from llama_index.llms import Ollama
-from llama_hub.web.sitemap import SitemapReader
-from llama_hub.file.unstructured import UnstructuredReader
-from pathlib import Path
-from eth_llama_config import embeddings_model_name, ollama_model_name
 
+import chromadb
+from eth_llama_config import embeddings_model_name, ollama_model_name
+from llama_hub.file.unstructured import UnstructuredReader
+from llama_hub.web.sitemap import SitemapReader
+from llama_index import PromptHelper
+from llama_index import ServiceContext
+from llama_index import SimpleDirectoryReader
+from llama_index import VectorStoreIndex
+from llama_index.embeddings import HuggingFaceEmbedding
+from llama_index.llms import Ollama
+from llama_index.storage.storage_context import StorageContext
+from llama_index.vector_stores import ChromaVectorStore
 
 print("You are about to re-index the Eurotech documentation. This will take a while, and will destroy the existing db. Are you sure you want to continue? (y/n)")
 

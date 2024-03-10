@@ -1,5 +1,6 @@
 * METADATA:
-    -
+    - self qerying vectorstore: https://python.langchain.com/docs/modules/data_connection/retrievers/self_query/
+
 
 
 
@@ -9,6 +10,7 @@
 
 * PINECONE:
     - after a certain document number similarity search doesn't work: https://github.com/langchain-ai/langchain/issues/2442
+    - how to create ids for vectors and apply operations on families of files: https://docs.pinecone.io/docs/manage-rag-documents
 
 
 * EMBEDDING:

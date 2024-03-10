@@ -1,17 +1,15 @@
-from langchain_openai.embeddings import OpenAIEmbeddings
-from langchain_pinecone import PineconeVectorStore as LcPinecone
-from langchain.schema import (SystemMessage, HumanMessage, AIMessage)
-from langchain.chat_models import ChatOpenAI
 import os
-from pinecone import Pinecone
-from resources.playground_secret_key import PINECONE_KEY, SECRET_KEY
-from typing import List, Dict
-from langchain_community.document_loaders import DirectoryLoader
-from llama_index.llms.openai import OpenAI
-from llama_index.core.extractors import KeywordExtractor
-from llama_index.core.node_parser import TokenTextSplitter
+from typing import List
+
+from langchain_openai.embeddings import OpenAIEmbeddings
 from llama_index.core import SimpleDirectoryReader
+from llama_index.core.extractors import KeywordExtractor
 from llama_index.core.ingestion import IngestionPipeline
+from llama_index.core.node_parser import TokenTextSplitter
+from llama_index.llms.openai import OpenAI
+from pinecone import Pinecone
+
+from resources.playground_secret_key import PINECONE_KEY, SECRET_KEY
 
 os.environ['PINECONE_API_KEY'] = PINECONE_KEY
 environment = os.environ.get('PINECONE_ENVIRONMENT')

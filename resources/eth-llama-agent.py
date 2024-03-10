@@ -1,24 +1,23 @@
 # From https://docs.llamaindex.ai/en/stable/understanding/storing/storing.html#using-vector-stores
 
+import logging
 import os
+import sys
+
 import chromadb
 import gradio as gr
-import sys
-import logging
-from llama_index import VectorStoreIndex
-from llama_index import ServiceContext
+from chromadb.config import Settings
+from conf.config import embeddings_model_name
 from llama_index import PromptHelper
-from llama_index.llms import Ollama
-from llama_index.llms import OpenAILike
+from llama_index import ServiceContext
+from llama_index import VectorStoreIndex
+from llama_index.embeddings import HuggingFaceEmbedding
 from llama_index.llms import ChatMessage
 from llama_index.llms import MessageRole
+from llama_index.llms import OpenAILike
 from llama_index.prompts import ChatPromptTemplate
-from llama_index.embeddings import HuggingFaceEmbedding
-from llama_index.vector_stores import ChromaVectorStore
 from llama_index.storage.storage_context import StorageContext
-from llama_index.chat_engine import SimpleChatEngine
-from chromadb.config import Settings
-from conf.config import embeddings_model_name, ollama_model_name
+from llama_index.vector_stores import ChromaVectorStore
 
 
 #
