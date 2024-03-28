@@ -17,6 +17,7 @@ llama-index-llms-openai="*"
 llama-index-extractors-entity="*"
 llama-index="*"
 docx2txt = "*"
+streamlit = "*"
 
 [dev-packages]
 
